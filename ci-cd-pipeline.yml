@@ -1,0 +1,29 @@
+name: Pipeline CI-CD DevFlow
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar o codigo do repositorio
+        uses: actions/checkout@v6
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Verificar sintaxe do codigo
+        run: python -m compileall -q .
+
+      - name: Executar testes automatizados
+        run: python -m unittest -v
