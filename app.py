@@ -1,7 +1,7 @@
 # Aplicação DevFlow Solutions
 
 def pagina_inicial():
-    return "Bem-vindo à DevFlow Solutions!"
+    return "Sistema DevFlow atualizado com sucesso!"
 
 if __name__ == "__main__":
     print(pagina_inicial())
